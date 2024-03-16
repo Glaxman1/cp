@@ -1,0 +1,9 @@
+class Solution(object):
+    def fairCandySwap(self, aliceSizes, bobSizes):
+        totalalice=sum(aliceSizes)
+        totalbob=sum(bobSizes)
+        targetTotal=(totalalice+totalbob)//2
+        for alicecandy in aliceSizes:
+            bobcandy=alicecandy+(targetTotal-totalalice)
+            if bobcandy in bobSizes:
+                return[alicecandy,bobcandy]
