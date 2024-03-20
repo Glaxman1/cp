@@ -1,0 +1,15 @@
+class Solution:
+
+    def __init__(self, head: Optional[ListNode]):
+        self.head=head
+        
+
+    def getRandom(self) -> int:
+        count,output=0,0
+        curr=self.head
+        while curr!=None:
+            count+=1
+            if random.randint(1,count)==1:
+                output=curr.val
+            curr=curr.next
+        return output
