@@ -1,0 +1,16 @@
+class Solution:
+    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        leftpos=head
+        rightpos=head
+        temp=head
+        leftcount=1
+        while temp:
+            if leftcount<k:
+                leftcount+=1
+                leftpos=leftpos.next
+            else:
+                if temp.next:
+                    rightpos=rightpos.next
+            temp=temp.next
+        leftpos.val,rightpos.val=rightpos.val,leftpos.val
+        return head
